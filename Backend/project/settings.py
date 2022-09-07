@@ -44,7 +44,11 @@ INSTALLED_APPS = [
     'animals',
 >>>>>>> 54ea8f5 (💩 임시저장)
     'djangotest',
+<<<<<<< HEAD
     # 3rd party apps
+=======
+    'items',
+>>>>>>> e2b459e (#2 :sparkles: 조경 배치, 구매)
     'rest_framework',
     'rest_framework.authtoken',
     

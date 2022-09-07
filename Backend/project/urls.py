@@ -20,8 +20,12 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('test/', include('djangotest.urls')),
 <<<<<<< HEAD
+<<<<<<< HEAD
     path('accounts/', include('accounts.urls')),
 =======
     path('animals/', include('animals.urls')),
 >>>>>>> 57add71 (#5 ✨ animals 요청 분기)
+=======
+    path('items/', include('items.urls')),
+>>>>>>> e2b459e (#2 :sparkles: 조경 배치, 구매)
 ]
