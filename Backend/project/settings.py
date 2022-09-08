@@ -37,8 +37,12 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
+<<<<<<< HEAD
     # local apps
     'accounts',
+=======
+    'animals',
+>>>>>>> 54ea8f5 (💩 임시저장)
     'djangotest',
     # 3rd party apps
     'rest_framework',
