@@ -19,5 +19,9 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('test/', include('djangotest.urls')),
+<<<<<<< HEAD
     path('accounts/', include('accounts.urls')),
+=======
+    path('animals/', include('animals.urls')),
+>>>>>>> 57add71 (#5 ✨ animals 요청 분기)
 ]
