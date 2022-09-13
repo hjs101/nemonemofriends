@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 """project URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
@@ -31,6 +32,8 @@ urlpatterns = [
 >>>>>>> e2b459e (#2 :sparkles: 조경 배치, 구매)
 ]
 =======
+=======
+>>>>>>> aabf203 (Fix items models.py)
 """project URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
@@ -54,5 +57,10 @@ urlpatterns = [
     path('test/', include('djangotest.urls')),
     path('items/', include('items.urls')),
     path('accounts/', include('accounts.urls')),
+<<<<<<< HEAD
 ]
 >>>>>>> 9ba888b (Update urls.py)
+=======
+    path('animals/', include('animals.urls')),
+]
+>>>>>>> aabf203 (Fix items models.py)
