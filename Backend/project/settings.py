@@ -46,10 +46,16 @@ INSTALLED_APPS = [
 >>>>>>> 54ea8f5 (💩 임시저장)
     'djangotest',
 <<<<<<< HEAD
+<<<<<<< HEAD
     # 3rd party apps
 =======
     'items',
 >>>>>>> e2b459e (#2 :sparkles: 조경 배치, 구매)
+=======
+    'items',
+
+    # 3rd party 라이브러리
+>>>>>>> 6776c8e (💡 주석 수정)
     'rest_framework',
     'rest_framework.authtoken',
     
@@ -62,7 +68,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     
-    # 기본
+    # django 내장
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
