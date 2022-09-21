@@ -21,5 +21,9 @@ urlpatterns = [
     path('join/', views.TestView.as_view(), name='test'),
     path('array/', views.ArrayView.as_view(), name='array'),
     path('data_animals/', views.DataAnimals.as_view()),
+<<<<<<< HEAD
     path('audiotest/', views.AudioTestView.as_view()),
+=======
+    path('audio/', views.AudioView.as_view()),
+>>>>>>> ec84146 (#5 ✨ 음성 파일 통신 관련 샘플 코드)
 ]

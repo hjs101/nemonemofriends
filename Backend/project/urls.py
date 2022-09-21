@@ -52,6 +52,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+from django.conf import settings 
+from django.conf.urls.static import static
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('test/', include('djangotest.urls')),
@@ -62,5 +65,9 @@ urlpatterns = [
 >>>>>>> 9ba888b (Update urls.py)
 =======
     path('animals/', include('animals.urls')),
+<<<<<<< HEAD
 ]
 >>>>>>> aabf203 (Fix items models.py)
+=======
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+>>>>>>> ec84146 (#5 ✨ 음성 파일 통신 관련 샘플 코드)
