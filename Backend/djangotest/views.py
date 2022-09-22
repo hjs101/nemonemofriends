@@ -125,6 +125,7 @@ class AudioView(APIView):
     def post(self, request):
         audio = request.FILES.get("audio")
 
+
         # multipart/form-data로 받은 file을 테스트를 위해 bytes로 변환한 후
         # bytes를 wav 파일로 저장
         with open('media/copy.wav', mode='bx') as f:
@@ -140,6 +141,7 @@ class AudioView(APIView):
         # file 삭제
         fs.delete(filename)
 <<<<<<< HEAD
+<<<<<<< HEAD
         
         return Response(SUCCESS)
 >>>>>>> 1e971fb (#4 put -> post)
@@ -151,3 +153,7 @@ class AudioView(APIView):
         fs.delete(settings.BASE_DIR + '/copy.wav')
         return Response(SUCCESS)
 >>>>>>> 70af774 (settings.BASE_DIR 추가)
+=======
+        fs.delete(settings.MEDIA_ROOT + '/copy.wav')
+        return Response(SUCCESS)
+>>>>>>> 8112dd7 (MEDIA_ROOT 추가)
