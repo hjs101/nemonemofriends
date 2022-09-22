@@ -128,6 +128,8 @@ class DataAnimals(APIView):
 
 
 class AudioView(APIView):
+<<<<<<< HEAD
+<<<<<<< HEAD
     # 전체 동물 대화
     def talk_to_all(self, context, user):
         print('길이', len(ALL_COMMANDS))
@@ -164,6 +166,13 @@ class AudioView(APIView):
         return FAIL
 
     def post(self, request):
+=======
+    def put(self, request):
+=======
+    def post(self, request):
+>>>>>>> 20f175f (다시 post로 복구)
+        print(request.FILES)
+>>>>>>> 3d256b3 (post put으로 변경)
         audio = request.FILES["audio"]
         
         # multipart/form-data로 받은 file을 테스트를 위해 bytes로 변환한 후
@@ -208,6 +217,7 @@ class AudioView(APIView):
 =======
         fs.delete(settings.MEDIA_ROOT + '/copy.wav')
         return Response(SUCCESS)
+<<<<<<< HEAD
 >>>>>>> 8112dd7 (MEDIA_ROOT 추가)
 =======
         # fs.delete(filename)
@@ -238,3 +248,5 @@ class AudioView(APIView):
 
         return Response(SUCCESS)
 >>>>>>> 6d6c027 (#4 ✨ 대화 - "꼬꼬 앉아" 테스트)
+=======
+>>>>>>> 3d256b3 (post put으로 변경)
