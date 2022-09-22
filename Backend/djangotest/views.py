@@ -347,9 +347,9 @@ class PlayWordchainNextView(APIView):
         return response
 
     def post(self, request):
-        voice = request.FILES['voice']
+        audio = request.FILES['audio']
         fss = FileSystemStorage()
-        filename = fss.save(voice.name, voice)
+        filename = fss.save(audio.name, audio)
         filepath = fss.path(filename)
 
         # 음성 인식
