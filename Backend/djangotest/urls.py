@@ -25,5 +25,11 @@ urlpatterns = [
     path('audiotest/', views.AudioTestView.as_view()),
 =======
     path('audio/', views.AudioView.as_view()),
+<<<<<<< HEAD
 >>>>>>> ec84146 (#5 ✨ 음성 파일 통신 관련 샘플 코드)
+=======
+    path('play/wordchain/start/', views.PlayWordchainStartView.as_view()),
+    path('play/wordchain/next/', views.PlayWordchainNextView.as_view()),
+    path('play/wordchain/finish/', views.PlayWordchainFinishView.as_view()),
+>>>>>>> 3d26de5 (#5 ✨ 끝말잇기)
 ]
