@@ -349,14 +349,14 @@ class PlayWordchainNextView(APIView):
     def post(self, request):
         audio = request.FILES['audio']
         fss = FileSystemStorage()
-        filename = fss.save(audio.name, audio)
+        filename = fss.save(request.user.username +'.wav', audio)
         filepath = fss.path(filename)
 
         # 음성 인식
         # request_word = recognize(filepath)
         request_word = '단어'
 
-        fss.delete(filename)
+        fss.delete(settings.MEDIA_ROOT + f'/{filename}.wav')
         wordchain = WordChain.objects.get(user_id=request.user)
         words = wordchain.words
         score = wordchain.score
@@ -428,4 +428,7 @@ class PlayWordchainFinishView(APIView):
         wordchain.delete()
 
         return Response(SUCCESS)
+<<<<<<< HEAD
 >>>>>>> 3d26de5 (#5 ✨ 끝말잇기)
+=======
+>>>>>>> 35545c1 (#5 🐛 사용자로부터 받은 음성 파일 저장 및 삭제 수정)
