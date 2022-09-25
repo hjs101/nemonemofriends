@@ -38,6 +38,12 @@ def date_init():
 
     print("수정완료")
 
+class RefreshTokenView(APIView):
+    def post(self, request):
+        refresh_token = request.data.get('refresh');
+        
+        
+
 class StartAnimalView(APIView):
     def post(self, request):
         # 동물 추천 알고리즘
@@ -312,7 +318,7 @@ class LoadGameView(APIView):
         }
         return response
 class UserDeleteView(APIView):
-    def delete(self,request):
+    def post(self,request):
         response = FAIL.copy()
 
         datas = {
@@ -405,6 +411,7 @@ class ChangeEffectView(APIView):
         if serializers.is_valid(raise_exception=True):
             serializers.save()
         response = SUCCESS
+<<<<<<< HEAD
         return Response(response)
 
 
@@ -469,3 +476,6 @@ class GoogleLogin(SocialLoginView):
     adapter_class = google_view.GoogleOAuth2Adapter
     callback_url = GOOGLE_CALLBACK_URI
     client_class = OAuth2Client
+=======
+        return Response(response)
+>>>>>>> 5f2cc5a (#3 :recycle: 회원관리 기능 수정사항)
