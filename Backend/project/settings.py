@@ -58,6 +58,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
     'django_apscheduler',
+
     # DRF auth
     'dj_rest_auth',
     'dj_rest_auth.registration',
@@ -95,7 +96,7 @@ REST_FRAMEWORK = {
 STATE = env('STATE')
 ACCOUNT_USER_MODEL_USERNAME_FIELD = 'username'
 ACCOUNT_USERNAME_REQUIRED = True
-ACCOUNT_AUTHENTICATION_METHOD= "username"
+ACCOUNT_AUTHENTICATION_METHOD= 'username'
 AUTH_USER_MODEL = 'accounts.User'
 REST_USE_JWT = True
 SIMPLE_JWT = {
@@ -139,7 +140,7 @@ WSGI_APPLICATION = 'project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES={
+DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': env('DB_NAME'),
@@ -188,7 +189,6 @@ USE_TZ = False
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 
 # Default primary key field type
@@ -196,8 +196,9 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+
+# Medai files (caching wav file for STT)
 MEDIA_URL = '/media/'
-MEDIA_ROOT= os.path.join(BASE_DIR, 'media')
 
 
 # Logging
@@ -289,6 +290,7 @@ LOGGING = {
             'level': 'INFO',
         },
     },
+<<<<<<< HEAD
 }
 
 """
@@ -843,3 +845,6 @@ LOGGING = {
     },
 }
 >>>>>>> 91ece6c (Update Backend/project/settings.py)
+=======
+}
+>>>>>>> feac533 (♻️ settings.py 중복 제거)
