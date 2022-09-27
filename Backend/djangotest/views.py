@@ -430,6 +430,23 @@ class PlayWordchainFinishView(APIView):
 
         return Response(SUCCESS)
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 3d26de5 (#5 ✨ 끝말잇기)
 =======
 >>>>>>> 35545c1 (#5 🐛 사용자로부터 받은 음성 파일 저장 및 삭제 수정)
+=======
+
+
+from django.core.cache import cache
+
+class CacheView(APIView):
+    def post(self, request):
+        user = request.user
+        cache.set(user.username, [0, '제시어'], 60 * 60)
+        test = cache.get(user.username)
+        test[0] = 1
+        test.append('단어')
+        ttest = cache.get(user.username)
+        print(ttest)
+        return Response(SUCCESS)
+>>>>>>> c2c0a0d (#5 ♻️ 끝말잇기 Redis 적용)

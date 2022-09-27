@@ -31,5 +31,9 @@ urlpatterns = [
     path('play/wordchain/start/', views.PlayWordchainStartView.as_view()),
     path('play/wordchain/next/', views.PlayWordchainNextView.as_view()),
     path('play/wordchain/finish/', views.PlayWordchainFinishView.as_view()),
+<<<<<<< HEAD
 >>>>>>> 3d26de5 (#5 ✨ 끝말잇기)
+=======
+    path('cache/', views.CacheView.as_view()),
+>>>>>>> c2c0a0d (#5 ♻️ 끝말잇기 Redis 적용)
 ]

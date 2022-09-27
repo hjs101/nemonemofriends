@@ -585,6 +585,7 @@ LOGGING = {
             'level': 'INFO',
         },
     },
+<<<<<<< HEAD
 }
 =======
 """
@@ -849,3 +850,19 @@ LOGGING = {
 =======
 }
 >>>>>>> feac533 (♻️ settings.py 중복 제거)
+=======
+}
+
+
+# Cache -- Redis
+# https://funncy.github.io/django/2020/09/24/redis/
+CACHES = {
+    "default": {
+        "BACKEND": "django_redis.cache.RedisCache",
+        "LOCATION": "redis://127.0.0.1:6379/1", # 1번 DB
+        "OPTIONS": {
+            "CLIENT_CLASS": "django_redis.client.DefaultClient",
+        }
+    }
+}
+>>>>>>> c2c0a0d (#5 ♻️ 끝말잇기 Redis 적용)
