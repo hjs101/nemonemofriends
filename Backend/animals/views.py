@@ -155,11 +155,15 @@ class AnimalsPlayWordchainNextView(APIView):
         username = user.username
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         request_word = recongize(user.username, request.data.get("audio"))
 =======
         # request_word = recongize(username, request.FILES['audio'])
         request_word = "테스트"
 >>>>>>> c2c0a0d (#5 ♻️ 끝말잇기 Redis 적용)
+=======
+        request_word = recongize(username, request.FILES['audio'])
+>>>>>>> f4c10c6 (#5 🔥 끝말잇기 테스트용 코드 삭제)
 
         words = cache.get(username)
 
