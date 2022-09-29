@@ -157,6 +157,7 @@ class AnimalsPlayWordchainNextView(APIView):
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         request_word = recongize(user.username, request.data.get("audio"))
 =======
         # request_word = recongize(username, request.FILES['audio'])
@@ -165,6 +166,9 @@ class AnimalsPlayWordchainNextView(APIView):
 =======
         request_word = recongize(username, request.FILES['audio'])
 >>>>>>> f4c10c6 (#5 🔥 끝말잇기 테스트용 코드 삭제)
+=======
+        request_word = recongize(username, request.data.get("audio"))
+>>>>>>> d9d4313 (#5 🐛 username 추가)
 
         words = cache.get(username)
 
