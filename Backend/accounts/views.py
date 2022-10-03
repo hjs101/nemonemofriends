@@ -263,7 +263,7 @@ class GachaView(APIView):
             random_box = []
             own_animals = [i.animal for i in User_Animal.objects.filter(user=user)]
             all_animals = Animal.objects.all()
-            decos = Decoration.objects.all()
+            decos = Decoration.objects.exclude(is_rare=False)
             for animal in all_animals:
                 random_box.append(animal)
             for check_animal in random_box[:]:
@@ -271,6 +271,11 @@ class GachaView(APIView):
                     random_box.remove(check_animal)
             for deco in decos:
                 random_box.append(deco)
+            random_box.append("item")
+            random_box.append("item")
+            random_box.append("item")
+            random_box.append("item")
+            random_box.append("item")
             random_box.append("item")
             random_box.append("item")
             random_box.append("item")
@@ -331,6 +336,7 @@ class ChangeEffectView(APIView):
 <<<<<<< HEAD
         return Response(response)
 
+<<<<<<< HEAD
 
 def google_callback(request):
     client_id = getattr(settings, "SOCIAL_AUTH_GOOGLE_CLIENT_ID")
@@ -396,3 +402,5 @@ class GoogleLogin(SocialLoginView):
 =======
         return Response(response)
 >>>>>>> 5f2cc5a (#3 :recycle: 회원관리 기능 수정사항)
+=======
+>>>>>>> 9789625 (#3 :recycle: 뽑기 기능 수정)
