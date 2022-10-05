@@ -18,7 +18,7 @@ from utils import *
 import requests, random
 
 from .models import Mbti, User
-from .serializers import UserChangeBGMSerializer, UserChangeEffectSerializer, UserAnimalInfoSerializer, UserItemInfoSerializer, AnimalInfoSerializer, ShopInfoSerializer
+from .serializers import UserChangeSoundSerializer, UserAnimalInfoSerializer, UserItemInfoSerializer, AnimalInfoSerializer, ShopInfoSerializer
 from animals.models import User_Animal, Animal
 from items.models import Item, Decoration, User_Item, User_Decoration
 import logging
@@ -177,7 +177,7 @@ class LoadGameView(APIView):
         decoration_len = Decoration.objects.all()
         list = [0 for i in range(0,decoration_len.count()+1)]
         for decoration in decorations:
-            if not decoration.decoration.is_rare and not decoration.is_located:
+            if not decoration.is_located:
                 list[decoration.decoration.id] += 1
         decorations_ilst = []
         decorations_ilst.append({})
@@ -314,17 +314,18 @@ class GachaView(APIView):
             res.data = response
             return res
 
-class ChangeBGMView(APIView):
+class ChangeSoundView(APIView):
     def post(self,request):
         response = FAIL
         user = request.user
-        serializers = UserChangeBGMSerializer(instance=user, data=request.data)
+        serializers = UserChangeSoundSerializer(instance=user, data=request.data)
         if serializers.is_valid(raise_exception=True):
             serializers.save()
         User.objects
         response = SUCCESS
         return Response(response)
 
+<<<<<<< HEAD
 class ChangeEffectView(APIView):
     def post(self,request):
         response = FAIL
@@ -404,3 +405,5 @@ class GoogleLogin(SocialLoginView):
 >>>>>>> 5f2cc5a (#3 :recycle: 회원관리 기능 수정사항)
 =======
 >>>>>>> 9789625 (#3 :recycle: 뽑기 기능 수정)
+=======
+>>>>>>> 0f265c6 (#3 :recycle: 소리설정 바꾸기)
