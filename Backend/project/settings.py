@@ -51,7 +51,6 @@ INSTALLED_APPS = [
     # local apps
     'accounts',
     'animals',
-    'djangotest',
     'items',
 
     # 3rd party 라이브러리
