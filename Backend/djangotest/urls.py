@@ -21,26 +21,9 @@ urlpatterns = [
     path('join/', views.TestView.as_view(), name='test'),
     path('array/', views.ArrayView.as_view(), name='array'),
     path('data_animals/', views.DataAnimals.as_view()),
-<<<<<<< HEAD
-<<<<<<< HEAD
-    path('audiotest/', views.AudioTestView.as_view()),
-=======
-    path('audio/', views.AudioView.as_view()),
-<<<<<<< HEAD
->>>>>>> ec84146 (#5 ✨ 음성 파일 통신 관련 샘플 코드)
-=======
-    path('play/wordchain/start/', views.PlayWordchainStartView.as_view()),
-    path('play/wordchain/next/', views.PlayWordchainNextView.as_view()),
-    path('play/wordchain/finish/', views.PlayWordchainFinishView.as_view()),
-<<<<<<< HEAD
->>>>>>> 3d26de5 (#5 ✨ 끝말잇기)
-=======
-=======
     # path('audio/', views.AudioView.as_view()),
     # path('play/wordchain/start/', views.PlayWordchainStartView.as_view()),
     # path('play/wordchain/next/', views.PlayWordchainNextView.as_view()),
     # path('play/wordchain/finish/', views.PlayWordchainFinishView.as_view()),
->>>>>>> 597614e (#3 🗃️ 마이그레이션 에러 해결)
     path('cache/', views.CacheView.as_view()),
->>>>>>> c2c0a0d (#5 ♻️ 끝말잇기 Redis 적용)
 ]

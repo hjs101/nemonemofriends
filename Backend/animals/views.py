@@ -1,21 +1,22 @@
 from django.shortcuts import get_list_or_404, get_object_or_404
 from django.contrib.auth import get_user_model
 from django.core.cache import cache
+from django.conf import settings
 
 from rest_framework.decorators import APIView
 from rest_framework.response import Response
 
 from .models import Animal, User_Animal
+from .serializers import AnimalsRenameSerializer
 from .utils import *
 from utils import SUCCESS, FAIL
 import logging
 
 import random
 from datetime import datetime, timedelta
-
+from time import strftime, strptime
 
 logger = logging.getLogger(__name__)
-
 
 class AnimalsEatView(APIView):
     def post(self, request):
@@ -64,29 +65,13 @@ class AnimalsEatView(APIView):
 
 class AnimalsRenameView(APIView):
     def post(self, request):
-        user = request.user
-        id = request.data.get('id')
-        user_animal = get_object_or_404(User_Animal, pk=id)
-        response = FAIL.copy()
-
-        if user == user_animal.user:
-            name = request.data.get('name')
-
-            if not len(name) <= 5:
-                response['msg'] = '5글자를 초과했습니다.'
-                return Response(response)
-
-            name = name.replace(' ', '')
-
-            if User_Animal.objects.filter(user=user, name=name).exclude(pk=id).exists():
-                response = FAIL.copy()
-                response['msg'] = '해당 이름을 보유한 동물이 이미 존재합니다.'
-                return Response(FAIL)
-
-            user_animal.name = name
-            user_animal.save()
-            return Response(SUCCESS)
-
+        user_animal = get_object_or_404(User_Animal, pk=request.data.get('id'))
+        
+        if request.user == user_animal.user:
+            serializer = AnimalsRenameSerializer(instance=user_animal, data=request.data)
+            if serializer.is_valid(raise_exception=True):
+                serializer.save()
+                return Response(SUCCESS)
         else:
             return Response(FAIL)
 
@@ -122,7 +107,7 @@ class AnimalsTalkView(APIView):
         response = {}
         user = get_object_or_404(get_user_model(), username=request.user)
         user_animals = get_list_or_404(User_Animal, user=user)
-
+        
         for user_animal in user_animals:
             if user_animal.is_located and user_animal.name in context:
                 response = self.talk(user_animal, user, context)
@@ -167,26 +152,7 @@ class AnimalsPlayWordchainNextView(APIView):
     def post(self, request):
         user = request.user
         username = user.username
-<<<<<<< HEAD
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-        request_word = recongize(user.username, request.data.get("audio"))
-=======
-        # request_word = recongize(username, request.FILES['audio'])
-        request_word = "테스트"
->>>>>>> c2c0a0d (#5 ♻️ 끝말잇기 Redis 적용)
-=======
-        request_word = recongize(username, request.FILES['audio'])
->>>>>>> f4c10c6 (#5 🔥 끝말잇기 테스트용 코드 삭제)
-=======
         request_word = recongize(username, request.data.get("audio"))
->>>>>>> d9d4313 (#5 🐛 username 추가)
-
-=======
-        request_word = recongize(username, request.data.get("audio"))
->>>>>>> cff67dd (#5 🔨 허용 단어 추가 및 로깅 수정)
         words = cache.get(username)
 
         # 게임을 시작했는지 확인
@@ -233,7 +199,7 @@ class AnimalsPlayWordchainNextView(APIView):
         if len(response_words) < 1:
             words[0] = (words[0] + 1) * 2
             cache.set(username, words, 60 * 60)
-            response = self.finish('사용자가 이겼습니다.', words[0], request_word)
+            response = self.finish('사용자가 이겼습니다.', score, request_word)
             return Response(response)
         
         response_word = random.choice(response_words)
@@ -290,26 +256,20 @@ class AnimalsPlaceView(APIView):
 
 class AnimalsMazeView(APIView):
     def post(self, request):
-        score = int(request.data.get('score'))
         user = request.user
         user_animal = get_object_or_404(User_Animal, pk=request.data.get('id'))
-        response = FAIL.copy()
-
-        if score >= 2000:
-            response['msg'] = '비정상적인 접근입니다.'
-            return Response(response)
 
         if user == user_animal.user:
+
             if not user_animal.is_located:
                 response = get_absent_msg()
                 return Response(response)
 
+            score = int(request.data.get('score'))
             user = reward_gold(request.user, 'playing_maze', score*user_animal.level)
             user.save()
             return Response(SUCCESS)
-
-        response['msg'] = '요청 유저와 동물 소유 유저가 다릅니다.'
-        return Response(response)
+        return Response(FAIL)
 
 
 class AnimalsExpUpView(APIView):
