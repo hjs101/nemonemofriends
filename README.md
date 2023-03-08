@@ -1,9 +1,7 @@
 #  네모난친구들
 ![image](https://user-images.githubusercontent.com/97939170/223593501-d94afa7c-06d4-47f4-97d8-da29fc854de3.png)
 
-### UCC : [링크]()
-
-### 시연 시나리오 : [링크]()
+### UCC : [링크](https://www.youtube.com/watch?v=gl21A0Yb4P4)
 
 ## ✨Overview
 1. 인공지능 기술을 접목한 동물 키우기 게임입니다. 주어진 필드를 자유롭게 꾸미고 나만의 동물과 상호작용 해보세요!
