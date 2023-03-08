@@ -1,5 +1,5 @@
 #  네모난친구들
-<img src="![logo](/uploads/00984e0b3a440152bb0a4119a67c1851/logo.png)" width="250">
+![image](https://user-images.githubusercontent.com/97939170/223593501-d94afa7c-06d4-47f4-97d8-da29fc854de3.png)
 
 ### UCC : [링크]()
 
@@ -15,16 +15,16 @@
 ## 핵심 서비스
 
 ### 먹이주기
-![선생_013_설문조사_등록](/uploads/1dd1b65146c0f9b696f1ac4dca000f9a/선생_013_설문조사_등록.gif)
+![먹이주기](https://user-images.githubusercontent.com/97939170/223593620-74706d26-ea49-423c-aaf0-45bf2c8d63c6.gif)
 
 ### 대화하기
-![학생_임베디드__003_설문조사_제출](/uploads/be5d1c289a81ddc4b8c20fea8b30a2a5/학생_임베디드__003_설문조사_제출.gif)
+![대화하기](https://user-images.githubusercontent.com/97939170/223593658-6048637a-5344-4171-84a4-50fa943a95f6.gif)
 
 ### 놀아주기 - 끝말잇기
-![선생_017_설문조사_통계](/uploads/275cf0fd357a5e5410a5f66a44090d3e/선생_017_설문조사_통계.gif)
+![끝말잇기](https://user-images.githubusercontent.com/97939170/223593701-3a53f735-c76c-473d-adaa-b887c2cf3d9b.gif)
 
 ### 놀아주기 - 미로찾기
-![선생_005_과제_등록](/uploads/ae6174c6390b86dd22d4d0b6b300cb06/선생_005_과제_등록.gif)
+![미로찾기](/)
 
 ### 필드 꾸미기
 ![학생_004_과제_제출](/uploads/d3c93c60a3e82bcc1e6cd7f975e7326a/학생_004_과제_제출.gif)
