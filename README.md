@@ -24,7 +24,7 @@
 ![끝말잇기](https://user-images.githubusercontent.com/97939170/223593701-3a53f735-c76c-473d-adaa-b887c2cf3d9b.gif)
 
 ### 놀아주기 - 미로찾기
-![미로찾기](/README.asset/미로찾기.)
+![미로찾기](/README.asset/미로찾기.gif)
 
 ### 필드 꾸미기
 ![학생_004_과제_제출](/uploads/d3c93c60a3e82bcc1e6cd7f975e7326a/학생_004_과제_제출.gif)
