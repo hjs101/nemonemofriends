@@ -269,7 +269,7 @@ LOGGING = {
 CACHES = {
     "default": {
         "BACKEND": "django_redis.cache.RedisCache",
-        "LOCATION": "redis://j7c201.p.ssafy.io:6379/1", # 1번 DB
+        "LOCATION": "redis://catchcatch.store:6379/1", # 1번 DB
         "OPTIONS": {
             "CLIENT_CLASS": "django_redis.client.DefaultClient",
         }
